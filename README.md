@@ -18,7 +18,7 @@ https://xkcd.com/2327/
 | wtisplc  | Spot Crude Oil Price: West Texas Intermediate (WTI)             | https://fred.stlouisfed.org/series/WTISPLC                        |
 
 ## Graphs
-![Graphs](https://github.com/drsusmc/ohi/blob/master/graphs.png)
+![Graphs](graphs.png)
 
 ## OHI
 
@@ -27,4 +27,4 @@ https://xkcd.com/2327/
 
 
 ### DSCH:
-![DSCH](https://github.com/drsusmc/ohi/blob/master/ohi.png)
+![DSCH](ohi.png)
