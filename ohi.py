@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('data.csv')
+df = pd.read_csv('data.csv', index_col='year')
 
 # House Price per square foot
 df['pxHousePerSqFt'] = df.medPrice / df.medSqFt
@@ -24,6 +24,19 @@ df['OHI'] = df.pxHousePerSqFt / df.pxOilPerCuFt
 # Forcing higher house price to match XKCD
 #df['OHI'] = (df.pxHousePerSqFt * 1.2) / df.pxOilPerCuFt
 
+# What about 80% LTV?
+
 with plt.xkcd():
-    df.plot(x='year', y='OHI')
-    #plt.savefig('ohi.pdf')
+    axes = df.plot(y=['medPrice', 'medSqFt', 'pxHousePerSqFt', 'wtisplc'], subplots=True, layout=(2,2), figsize=(10,8))
+    axes[1,0].set_xlabel('')
+    axes[1,1].set_xlabel('')    
+    plt.tight_layout()
+    plt.savefig('graphs.png')      
+    plt.show()
+
+with plt.xkcd():    
+    axes = df.plot(y=['OHI'], figsize=(10.1,5))
+    axes.set_xlabel('')    
+    plt.tight_layout()    
+    plt.savefig('ohi.png')        
+    plt.show()
