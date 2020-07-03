@@ -26,4 +26,4 @@ df['OHI'] = df.pxHousePerSqFt / df.pxOilPerCuFt
 
 with plt.xkcd():
     df.plot(x='year', y='OHI')
-    plt.savefig('ohi.pdf')
+    #plt.savefig('ohi.pdf')
